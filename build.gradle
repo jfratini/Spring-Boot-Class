@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.9.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+plugins {
+  id 'org.springframework.boot' version '1.5.9.RELEASE'
+  id 'java'
+  id 'com.gorylenko.gradle-git-properties' version '1.4.20'
+ } 
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+springBoot {
+    buildInfo()
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-devtools')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.3')
+	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
+	compileOnly('org.projectlombok:lombok')
+	compile ('org.hibernate:hibernate-java8')
+	runtime ('mysql:mysql-connector-java')
+	compile ('org.springframework.boot:spring-boot-starter-actuator')
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Todo List</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<h1>Todo List</h1>
+
+<ol>
+  <li th:each="todo : ${todos}">
+    <span th:text="${todo.title}">Sample Task</span>:
+    <span th:text="${todo.description}">i wonder what i'll do today?</span>
+    (<span th:text="${todo.dueDateFormatted}">yyyy-MM-dd</span>)
+  </li>
+</ol>
+
+</body>
+</html>
